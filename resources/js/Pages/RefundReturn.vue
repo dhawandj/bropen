@@ -45,6 +45,9 @@
 
       <h2 class="text-xl font-semibold">8. Contact Us</h2>
       <p>For any refund or cancellation queries, email us at <a href="mailto:support@browriters.com" class="text-blue-500">support@browriters.com</a>.</p>
+      
+      <h2 class="text-xl font-semibold">9. All the approved replacement and damaged product will be completed within 15 business working days</h2>
+
     </div>
   </div>
 </template>
