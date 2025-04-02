@@ -2,7 +2,7 @@
     <div class="min-h-screen flex flex-col">
       <!-- Navbar -->
       <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <Link :href="route('dashboard')" class="text-2xl font-bold">Browriters Eco Pens</Link>
+        <Link :href="route('dashboard')" class="text-2xl font-bold">browriters.com </Link>
         <nav>
           <ul class="hidden md:flex space-x-6">
             <li><Link href="dashboard" class="hover:text-green-500">Home</Link></li>
@@ -22,9 +22,9 @@
   
       <!-- About Us Section -->
       <section class="py-12 px-4 md:px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">About Browriters Eco Pens</h2>
+        <h2 class="text-3xl md:text-4xl font-bold">About browriters.com Eco Pens</h2>
         <p class="text-gray-700 mt-4 max-w-3xl mx-auto">
-          At **Browriters**, we believe in a **sustainable future**. Our pens are crafted from **recycled paper and responsibly sourced wood**, ensuring an **eco-friendly writing experience** without harming the environment.
+          At **browriters.com**, we believe in a **sustainable future**. Our pens are crafted from **recycled paper and responsibly sourced wood**, ensuring an **eco-friendly writing experience** without harming the environment.
         </p>
       </section>
   
@@ -51,23 +51,23 @@
       <section class="py-12 px-4 text-center">
         <h3 class="text-2xl font-semibold">Our Story</h3>
         <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
-          Browriters was founded with a vision to **reduce plastic waste** in stationery. Every year, **millions of plastic pens** end up in landfills, harming the planet. Our solution? **Eco-friendly pens** that deliver the same smooth writing experience **without polluting the environment**.
+          browriters.com was founded with a vision to **reduce plastic waste** in stationery. Every year, **millions of plastic pens** end up in landfills, harming the planet. Our solution? **Eco-friendly pens** that deliver the same smooth writing experience **without polluting the environment**.
         </p>
       </section>
   
       <!-- Footer -->
-     <footer class="bg-gray-900 text-white py-8 text-center px-4">
+      <footer class="bg-gray-900 text-white py-8 text-center px-4">
       <div class="container mx-auto">
-        <p class="mb-4">&copy; 2025 Browriters Eco Pens. All rights reserved. </p>
+        <p class="mb-4">&copy; 2025 browriters.com. All rights reserved.</p>
         
         <!-- Legal Links -->
         <div class="flex flex-wrap justify-center space-x-4 text-sm">
-          <Link :href="('privacy-policy')" class="hover:underline">Privacy Policy</Link>
-          <Link :href="('terms-conditions')" class="hover:underline">Terms & Conditions</Link>
-          <Link :href="('refund-policy')" class="hover:underline">Refund & Return Policy</Link>
-          <Link :href="('shipping-policy')" class="hover:underline">Shipping & Delivery Policy</Link>
+          <Link :href="route('pp')" class="hover:underline">Privacy Policy</Link>
+          <Link :href="route('td')" class="hover:underline">Terms & Conditions</Link>
+          <Link :href="route('rr')" class="hover:underline">Refund & Return Policy</Link>
+          <Link :href="route('sd')" class="hover:underline">Shipping & Delivery Policy</Link>
           <Link :href="('faqs')" class="hover:underline">FAQs</Link>
-          <Link :href="('contact-us')" class="hover:underline">Contact</Link>
+          <Link :href="route('contact-us')" class="hover:underline">Contact</Link>
         </div>
       </div>
     </footer>

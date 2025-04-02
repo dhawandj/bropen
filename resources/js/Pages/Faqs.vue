@@ -26,7 +26,7 @@
   
   const faqs = ref([
     {
-      question: "What materials are used in Browriters Pens?",
+      question: "What materials are used in browriters.com ?",
       answer: "Our pens are eco-friendly, made of paper and a small amount of wood to ensure durability while reducing plastic waste."
     },
     {

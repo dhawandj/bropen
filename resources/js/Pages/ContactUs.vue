@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen flex flex-col">
       <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <Link :href="route('dashboard')" class="text-2xl font-bold">Browriters Eco Pens</Link>
+        <Link :href="route('dashboard')" class="text-2xl font-bold">browriters.com </Link>
         <nav>
           <ul class="hidden md:flex space-x-6">
             <li><Link href="dashboard" class="hover:text-green-500">Home</Link></li>
@@ -68,7 +68,7 @@
   
       <!-- Footer -->
       <footer class="bg-gray-900 text-white py-6 text-center px-4">
-        <p>&copy; 2025 Browriters Eco Pens. All rights reserved.</p>
+        <p>&copy; 2025 browriters.com . All rights reserved.</p>
       </footer>
     </div>
   </template>

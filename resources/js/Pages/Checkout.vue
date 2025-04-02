@@ -2,7 +2,7 @@
     <div class=" mb-5">
  <!-- Navbar -->
  <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <Link :href="route('dashboard')" class="text-2xl font-bold">Browriters Eco Pens</Link>
+        <Link :href="route('dashboard')" class="text-2xl font-bold">browriters.com </Link>
 
         <nav>
           <ul class="hidden md:flex space-x-6">
@@ -68,7 +68,7 @@
     </div>
     <footer class="bg-gray-900 text-white py-8 text-center px-4">
       <div class="container mx-auto">
-        <p class="mb-4">&copy; 2025 Browriters Eco Pens. All rights reserved.</p>
+        <p class="mb-4">&copy; 2025 browriters.com  All rights reserved.</p>
         
         <!-- Legal Links -->
         <div class="flex flex-wrap justify-center space-x-4 text-sm">
@@ -90,7 +90,7 @@ import { ref, computed } from "vue";
   const cart = ref([
     { id: 1, name: "Standard Pen", price: 99, qty: 0, image: "/storage/pen1.jpg" },
     { id: 2, name: "Custom named Pen", price: 150, qty: 1, image: "/storage/pen2.jpg" },
-    { id: 2, name: "Browriters Pen", price: 99, qty: 1, image: "/storage/pen4.jpg" },
+    { id: 2, name: "browriters.com Pen", price: 99, qty: 1, image: "/storage/pen4.jpg" },
   ]);
   
   const shipping = ref({ name: "", address: "", phone: "" ,penName:''});

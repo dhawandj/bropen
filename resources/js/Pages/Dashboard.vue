@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col">
     <!-- Navbar -->
     <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-        <Link :href="route('dashboard')" class="text-2xl font-bold">Browriters (Eco Pens)</Link>
+        <Link :href="route('dashboard')" class="text-2xl font-bold"><span class="text-green-500 font-semibold">bro</span>writers.com</Link>
 
         <nav>
           <ul class="hidden md:flex space-x-6">
@@ -30,7 +30,7 @@
         Our pens are crafted from recycled paper and sustainably sourced wood. 
         Write with purpose, knowing you're helping the planet.
       </p>
-      <button class="mt-6 bg-green-500 text-white py-2 px-6 rounded-lg hover:bg-green-600">
+      <button onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});" class="mt-6 bg-green-500 text-white py-2 px-6 rounded-lg hover:bg-green-600">
         Explore Eco Pens
       </button>
     </section>
@@ -72,7 +72,7 @@
     <!-- Footer with Legal Links -->
     <footer class="bg-gray-900 text-white py-8 text-center px-4">
       <div class="container mx-auto">
-        <p class="mb-4">&copy; 2025 Browriters Eco Pens. All rights reserved.</p>
+        <p class="mb-4">&copy; 2025 browriters.com . All rights reserved.</p>
         
         <!-- Legal Links -->
         <div class="flex flex-wrap justify-center space-x-4 text-sm">
@@ -100,7 +100,7 @@ const toggleMenu = () => {
 const products = ref([
   { id: 1, name: 'Standard Writer Pen', description: 'Recycled paper barrel, wooden tip.', price: 99, image: '/storage/pen1.jpg' },
   { id: 2, name: 'Custom named Pen', description: 'Name will be printed on, Pen barrel.', price: 150, image: '/storage/pen2.jpg' },
-  { id: 3, name: 'Browriters Pen', description: '100% biodegradable, made from paper. Browriters.com Name on pen', price: 99, image: '/storage/pen3.jpg' },
+  { id: 3, name: 'browriters Pen', description: '100% biodegradable, made from paper. browriters.com.com Name on pen', price: 99, image: '/storage/pen3.jpg' },
 ]); 
 </script>
 
