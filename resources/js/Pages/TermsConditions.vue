@@ -1,6 +1,7 @@
 <template>
     <div class="min-h-screen flex flex-col items-center px-6 py-12">
       <h1 class="text-3xl font-bold mb-6">Terms & Conditions</h1>
+      <p>This website is managed By Dhawan J</p>
       <div class="max-w-3xl text-gray-700 space-y-6">
         <p>Effective Date: {{ new Date().getFullYear() }}</p>
   

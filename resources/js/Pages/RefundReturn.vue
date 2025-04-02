@@ -33,7 +33,7 @@
       <h2 class="text-xl font-semibold">5. Refund Process</h2>
       <ul class="list-disc pl-6">
         <li>Once we receive the returned product, we will inspect it.</li>
-        <li>Refunds are processed within <strong>3 business days</strong> after approval.</li>
+        <li>Refunds are Credited within <strong>3 business days</strong> after approval.</li>
         <li>Refunds will be credited to the original payment method (PhonePe, UPI, or bank transfer).</li>
       </ul>
 
