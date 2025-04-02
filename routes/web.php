@@ -53,7 +53,7 @@ Route::get('checkout',function () {
 
 Route::get('checkout111',function () {
             return Inertia::render('Checkout111');
-})->name('checkout');
+})->name('checkout111');
 
 Route::redirect('/', '/dashboard');
 require __DIR__.'/auth.php';
