@@ -85,7 +85,9 @@
   
   <script setup>
   import { Link } from "@inertiajs/vue3";
-import { ref, computed } from "vue";
+import axios from "axios";
+import { ref, computed, onMounted } from "vue";
+import qs from "qs"; 
   
   const cart = ref([
     { id: 1, name: "Standard Pen", price: 99, qty: 0, image: "/storage/pen1.jpg" },
@@ -102,10 +104,43 @@ import { ref, computed } from "vue";
     if (item.qty + change > 0) item.qty += change;
   };
   
-  const placeOrder = () => {
-    alert("Processing Payment...");
-    // Send order details to Laravel API
+  const placeOrder = async () => {
+    try {
+    const response = await axios.post("http://127.0.0.1:8000/phonepe/token");
+    
+    console.log("PhonePe Token Response:", response.data);
+    window.location.href=response.data.redirectUrl
+    let tokenUrl = response.data.redirectUrl;
+    
+    window.PhonePeCheckout.transact({ tokenUrl, callback, type: "IFRAME" });
+
+
+  } catch (error) {
+    console.error("Error:", error.response ? error.response.data : error.message);
+  }
   };
+  function callback (response) {
+  if (response === 'USER_CANCEL') {
+    console.log('reposse in user_Cancle',response);
+    /* Add merchant's logic if they have any custom thing to trigger on UI after the transaction is cancelled by the user*/
+    return;
+  } else if (response === 'CONCLUDED') {
+    console.log('reposse in Conclude',response);
+
+    /* Add merchant's logic if they have any custom thing to trigger on UI after the transaction is in terminal state*/
+    return;
+  }
+    }
+
+  onMounted(()=>{
+
+   
+
+
+
+  })
+
+
   </script>
   
   <style scoped>

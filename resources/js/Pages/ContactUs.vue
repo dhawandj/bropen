@@ -55,7 +55,7 @@
         <h3 class="text-2xl font-semibold">Our Contact Details</h3>
         <p class="mt-2 text-gray-700">📍 123 Green Street, Bangalore, India</p>
         <p class="mt-2 text-gray-700">📧 support@browriters.com</p>
-        <p class="mt-2 text-gray-700">📞 +91 98765 43210</p>
+        <p class="mt-2 text-gray-700">📞 +91 8050859436</p>
       </section>
   
       <!-- Google Maps (Optional) -->

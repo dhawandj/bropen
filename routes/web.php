@@ -61,55 +61,36 @@ require __DIR__.'/auth.php';
 
 
 
+Route::post('/phonepe/token', function (Request $request) {
+    // $url = "https://api-preprod.phonepe.com/apis/pg-sandbox/v1/oauth/token";
+    $url = "https://api.phonepe.com/apis/identity-manager/v1/oauth/token";
 
-Route::post('/initiate-payment', function (Request $request) {
-    $merchantId = "PGTESTPAYUAT";
-    $saltKey = 'YOUR_TEST_SALT_KEY';
-    $saltIndex = 1;
-    $baseUrl = "https://api-preprod.phonepe.com/apis/pg-sandbox";
-
-    $amount = $request->amount * 100; // Convert to paise
-    $orderId = 'TEST_TXN_' . time();
-    $redirectUrl = '/';
-    $failureUrl = '/failure/';
-
-    $payload = [
-        "merchantId" => $merchantId,
-        "merchantTransactionId" => $orderId,
-        "amount" => $amount,
-        "callbackUrl" => $redirectUrl,
-        "mobileNumber" => $request->mobile_number,
-        "paymentInstrument" => [
-            "type" => "PAY_PAGE"
-        ]
-    ];
-
-    $jsonPayload = json_encode($payload);
-    $checksum = hash('sha256', $jsonPayload . $saltKey) . "###" . $saltIndex;
-
-    $response = Http::withHeaders([
-        'Content-Type' => 'application/json',
-        'X-VERIFY' => $checksum
-    ])->post("$baseUrl/pg/v1/pay", [ // Correct UAT Endpoint
-        "request" => $jsonPayload
+    $response = Http::asForm()->post($url, [
+        'client_id' => env('PHONEPE_CLIENT_ID'),
+        'client_version' => "1",
+        'client_secret' =>env('PHONEPE_CLIENT_SECRET') ,
+        'grant_type' => "client_credentials",
     ]);
 
-    $responseData = $response->json();
+    $access_token = $response->json()['access_token'];
 
-    if ($responseData['success']) {
-        return response()->json([
-            'success' => true,
-            'redirect_url' => $responseData['data']['instrumentResponse']['redirectInfo']['url']
-        ]);
-    } else {
-        return response()->json([
-            'success' => false,
-            'message' => 'Payment initiation failed'
-        ], 400);
-    }
-});
-;
+    $url1 = "https://api.phonepe.com/apis/pg/checkout/v2/pay";
 
-Route::get('/payment-success', function () {
-    return "🎉 Payment Successful!";
+    $response1 = Http::withHeaders([
+        'Content-Type' => 'application/json',
+        'Authorization' => 'O-Bearer ' . $access_token,
+    ])->post($url1, [
+        "merchantOrderId" => "TX123rrty34432".rand(10,200),
+        "amount" => 1000,
+        "paymentFlow" => [
+            "type" => "PG_CHECKOUT",
+            "message" => "Payment message used for collect requests",
+            "merchantUrls" => [
+                "redirectUrl" => route('dashboard')
+            ]
+        ]
+    ]);
+
+
+    return response()->json($response1->json(), $response1->status());
 });
