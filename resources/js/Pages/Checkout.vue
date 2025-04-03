@@ -106,7 +106,7 @@ import qs from "qs";
   
   const placeOrder = async () => {
     try {
-    const response = await axios.post("http://127.0.0.1:8000/phonepe/token");
+    const response = await axios.post("/phonepe/token");
     
     console.log("PhonePe Token Response:", response.data);
     window.location.href=response.data.redirectUrl
